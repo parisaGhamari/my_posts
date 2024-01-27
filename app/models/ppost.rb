@@ -1,0 +1,2 @@
+class Ppost < ApplicationRecord
+end
