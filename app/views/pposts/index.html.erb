@@ -2,13 +2,38 @@
 
 <h1>Posts list</h1>
 
-<div id="pposts">
-  <% @pposts.each do |ppost| %>
-    <%= render ppost %>
-    <p>
-      <%= link_to "Show this ppost", ppost %>
-    </p>
-  <% end %>
-</div>
+<table class="table table-bordered border-primary table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<%= link_to "New ppost", new_ppost_path %>
+  <tbody>
+       <% @pposts.each do |ppost| %>
+    <tr>
+      <td><%= ppost.name %></td>
+      <td><%= ppost.title %></td>
+      <td><%= ppost.body %></td>
+
+
+
+
+
+<!--            <td>  <%#= render ppost %></td>-->
+<!--                <p>-->
+            <td>  <%= link_to "Show this post for Edite or Destroy", ppost %></td>
+<!--                 </p>-->
+               <% end %>
+
+
+               </tr>
+
+  </tbody>
+</table>
+<br>
+<%= link_to "New post", new_ppost_path, class:"btn btn-dark" %>
+

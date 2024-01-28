@@ -1,10 +1,33 @@
 <p style="color: green"><%= notice %></p>
 
+<div class="jumbotron">
+  <h1 class="display-4">
+    Hello <%= @ppost.name %>
+  </h1>
+  <p class="lead">
+    these are your post:
+    <br>
+    <%= @ppost.name %> ||
+    <%= @ppost.title %> ||
+    <%= @ppost.body %>
+  </p>
+
+  <hr class="my-4">
+  <p> You can Edite and Destroy </p>
+
+</div>
+
+
+<br>
+<br>
 <%= render @ppost %>
 
 <div>
-  <%= link_to "Edit this ppost", edit_ppost_path(@ppost) %> |
-  <%= link_to "Back to pposts", pposts_path %>
+  <br>
+  <br>
 
-  <%= button_to "Destroy this ppost", @ppost, method: :delete %>
+  <%= link_to "Edit this post", edit_ppost_path(@ppost),class:"btn btn-dark" %> |
+  <%= link_to "Back to posts", pposts_path,class:"btn btn-dark" %>
+  <br><br>
+  <%= button_to "Destroy this post", @ppost, method: :delete, clas:"btn btn-outline-warning" %>
 </div>
