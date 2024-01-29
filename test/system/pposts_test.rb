@@ -1,4 +1,4 @@
-require "application_system_test_case"
+require1 = require "application_system_test_case"
 
 class PpostsTest < ApplicationSystemTestCase
   setup do
