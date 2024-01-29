@@ -16,21 +16,21 @@ end
 
 
 
-RSpec.describe Ppost, type: :model do
-  it 'is valid with a title and body' do
-    post = Ppost.new(name: 'my name is ', title: 'My first post', body: 'This is the body of my first post.')
-    expect(post).to be_valid
-  end
+ RSpec.describe Ppost, type: :model do
+   it 'is valid with a title and body' do
+     post = Ppost.new(name: 'my name is ', title: 'My first post', body: 'This is the body of my first post.')
+     expect(post).to be_valid
+   end
 
-  it 'is invalid without a title' do
-    post = Ppost.new(name: 'my name is ',title: nil, body: 'This is a body without a title.')
-    post.valid?
-    expect(post.errors[:title]).to include("can't be blank")
-  end
+   it 'is invalid without a title' do
+     post = Ppost.new(name: 'my name is ',title: nil, body: 'This is a body without a title.')
+     post.valid?
+     expect(post.errors[:title]).to include("can't be blank")
+   end
 
-  it 'is invalid without a body' do
-    post = Ppost.new(name: 'my name is ',title: 'Title only', body: nil)
-    post.valid?
-    expect(post.errors[:body]).to include("can't be blank")
-  end
-end
+   it 'is invalid without a body' do
+     post = Ppost.new(name: 'my name is ',title: 'Title only', body: nil)
+     post.valid?
+     expect(post.errors[:body]).to include("can't be blank")
+   end
+ end
